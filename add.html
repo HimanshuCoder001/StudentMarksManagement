@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background: rgba(0,0,0,.5);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: calc(100% - 22px);
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"]:focus {
+            outline: none;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .lab label{
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <form action="add" method="post">
+        <div class="lab">
+        <h2>Add Student</h2>
+        <label for="StName">Name:</label>
+        <input type="text" name="StName" required><br>
+        <label for="StId">Id:</label>
+        <input type="text" name="StId" required><br>
+        <label for="center">Study Center:</label>
+        <input type="text" name="center" required><br>
+        <label for="hindi">Hindi:</label>
+        <input type="number" name="hindi" required><br>
+        <label for="english">English:</label>
+        <input type="number" name="english" required><br>
+        <label for="math">Math:</label>
+        <input type="number" name="math" required><br>
+        <label for="science">Science:</label>
+        <input type="number" name="science" required><br>
+        <label for="sst">SST:</label>
+        <input type="number" name="sst" required><br>
+        <label for="computer">Computer:</label>
+        <input type="text" name="computer" required><br>
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(#141e30, #243b55);
+    }
+    header {
+        background-color:  rgba(0,0,0,.6);
+        color: #5cc0bb;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header img {
+        max-width: 120px; /* Increased size of the logo */
+        height: auto;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 40px; /* Decreased margin */
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #ffd700;
+    }
+    main {
+        display: flex;
+        padding: 40px;
+    }
+    .left-section {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-section a {
+        margin-bottom: 20px; /* Decreased margin */
+        padding: 15px 30px; /* Adjusted padding */
+        background-color: #333; /* Common background color for buttons */
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: 200px; /* Fixed width for buttons */
+    }
+    .left-section a:hover {
+        background-color: #555;
+        transform: scale(1.05);
+    }
+    .right-section {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+    .background-images {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+    }
+    .background-image {
+        flex: 0 0 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: none;
+    }
+    .dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #fff;
+    }
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://www.codesquadz.com/">About Us</a>
+        <a href="https://www.codesquadz.com/course-list/java">Service</a>
+        <a href="https://www.codesquadz.com/contact">Contact Us</a>
+    </nav>
+    <img src="https://www.codesquadz.com/website_assets/aelogonew.png" alt="Logo">
+</header>
+<main>
+    <div class="left-section">
+        <a href="add.html" style="background-color: #4285f4;">Add Student</a>
+        <a href="search.html" style="background-color: #34a853;">Search Student Result</a>
+        <a href="update.html" style="background-color: #fbbc05;">Update Student</a>
+        <a href="delete.html" style="background-color: #ea4335;">Delete Student</a>
+        <a href="ts" style="background-color: #8a3ab9;">Total Students</a>
+    </div>
+    <div class="right-section">
+        <div class="background-images">
+            <div class="background-image" style="background-image: url('https://d3bszm3r69pk2n.cloudfront.net/74/admin_v1/banner/20089361147_6-weeks-summer-industrial-training-bg.png');"></div>
+            <div class="background-image" style="background-image: url('https://th.bing.com/th/id/OIP.VNnNWknLMsZ8H5Cn9ciGMAHaEK?rs=1&pid=ImgDetMain');"></div>
+            <div class="background-image" style="background-image: url('https://www.codesquadz.com/website_assets/img/final/java-training-mobile-baneer.jpg');"></div>
+        </div>
+        <div class="dots">
+            <div class="dot active" onclick="currentSlide(0)"></div>
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+        </div>
+    </div>
+</main>
+<script>
+    var currentSlideIndex = 0;
+    var slides = document.querySelectorAll('.background-image');
+    var dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].classList.remove('active');
+        }
+        slides[index].style.display = "block";
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(index) {
+        currentSlideIndex = index;
+        showSlide(currentSlideIndex);
+    }
+
+    function startSlideshow() {
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds (3000 milliseconds)
+    }
+
+    startSlideshow(); // Start the slideshow automatically
+</script>
+</body>
+</html>
